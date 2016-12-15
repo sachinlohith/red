@@ -2,10 +2,10 @@
 *This program will only work on Linux or Unix systems*
 
 Instructions :
-- Clone the repository with `git clone `
-- Go the the path of the repository on your system
+- Clone the repository with `git clone https://github.com/sachinlohith/red` or download the `zip` file
+- Go the the path of the repository with `$ cd ./red`
 - Make `run` executable through `$ chmod a+x ./run`
-- Run `run` program through the following command
+- Run the program through the following command
 ```bash
 $ ./run host_address port_no queue_size burst_size timeout
 ```
