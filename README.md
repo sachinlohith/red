@@ -7,9 +7,12 @@ Instructions :
 - Make `run` executable through `$ chmod a+x ./run`
 - Run `run` program through the following command
 ```bash
-$ ./run *host_address* *port_no* *queue_size* *burst_size* *timeout*
+$ ./run host_address port_no queue_size burst_size timeout
 ```
-- Example : `$ ./run 127.0.0.1 57171 10000 10 5`
+- Example : 
+```bash 
+$ ./run 127.0.0.1 57171 10000 10 5
+```
 
 Dependencies required to run:
 - `gcc` version > 4.0
