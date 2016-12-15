@@ -1,0 +1,28 @@
+function cleanUp {
+    echo "Caught SIGINT; cleaning up"
+    kill -- -$$
+    exit 0
+}
+
+trap cleanUp 2
+
+rm log 2>/dev/null
+gcc server.c -o server
+gcc client.c -o client
+
+if [[ $# < 5 ]]; then
+    echo "Usage: ./run host port queueSize burstSize timeout"
+    exit 1
+fi
+
+echo "Starting server ..."
+./server $1 $2 $3 > log &
+sleep 3
+echo "Starting client ..."
+./client $1 $2 $4 &
+echo "Starting queue processor ..."
+python processQueue.py $5 &
+
+while true ; do
+    sleep 1
+done
