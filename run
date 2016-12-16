@@ -6,7 +6,10 @@ function cleanUp {
 
 trap cleanUp 2
 
+# Remove any log file if present
 rm log 2>/dev/null
+
+# compile the client and server programs
 gcc server.c -o server
 gcc client.c -o client
 

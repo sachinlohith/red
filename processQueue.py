@@ -9,6 +9,7 @@ with open('pid', 'r') as fp:
 
 timeout = float(sys.argv[1])
 
+# Clear the queue of server.c after timeout seconds
 while(True):
     time.sleep(timeout)
     os.kill(pid, signal.SIGTSTP)

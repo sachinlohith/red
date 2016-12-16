@@ -1,3 +1,12 @@
+/* Queue data structure for storing packets of server
+ * Has the following typical methods:
+ * 1. createQueue
+ * 2. add - add at the rear
+ * 3. delte - delete at front
+ * 4. front - display element at the front
+ * 5. display - display the contents of the queue
+ */
+
 typedef struct Queue {
     char *data;
     int front, rear, size, capacity;
