@@ -39,6 +39,7 @@ void error(const char* msg) {
     exit(1);
 }
 
+
 // RED algorithm according to http://www.utdallas.edu/~jjue/cs6390/papers/red.pdf
 void red(Queue *queue, char *buffer) {
     printf("Current packet : %c\n", buffer[0]);
@@ -89,7 +90,6 @@ void red(Queue *queue, char *buffer) {
 // Write PID of the current process to a file for the Queue processor python script to read
 void writePID(int pid) {
     FILE* fp;
-
     fp = fopen("pid", "w");
     fprintf(fp, "%d", pid);
     fclose(fp);
@@ -190,3 +190,4 @@ int main(int argc, char** argv) {
     close(sockfd);
     return 0;
 }
+
